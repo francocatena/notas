@@ -1,0 +1,32 @@
+<head>
+  <meta charset="utf-8">
+  <title>Notas del Taller de Ruby</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+  <div class="container">
+    {{> notes}}
+  </div>
+</body>
+
+<template name="notes">
+  <div class="page-header">
+    <h1>Notas del Taller de Ruby</h1>
+  </div>
+
+  <ul>
+    {{#each notes}}
+      <li>{{content}}</li>
+    {{/each}}
+  </ul>
+
+  <form id="new_note">
+    <fieldset>
+      <div class="input-append">
+        <input class="span6" id="new_note_name" type="text" name="name" autofocus>
+        <input class="btn" type="submit" value="Agregar">
+      </div>
+    </fieldset>
+  </form>
+</template>
