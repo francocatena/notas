@@ -1,9 +1,10 @@
 @Notes = new Meteor.Collection 'notes'
 
 if Meteor.isClient
-  Template.notes.notes = -> Notes.find {}, {
-    transform: (note) -> note.content = note.content.autoLink?(); note
-  }
+  Template.notes.notes = -> Notes.find {},
+    transform: (note) ->
+      note.htmlContent = -> note.content.autoLink?()
+      note
 
   Template.notes.events =
       'submit #new_note': (event) ->
