@@ -17,7 +17,7 @@
 
   <ul>
     {{#each notes}}
-      <li>{{content}}</li>
+      {{> note}}
     {{/each}}
   </ul>
 
@@ -29,4 +29,8 @@
       </div>
     </fieldset>
   </form>
+</template>
+
+<template name="note">
+  <li>{{{content}}}</li>
 </template>
