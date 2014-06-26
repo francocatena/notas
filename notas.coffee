@@ -7,13 +7,13 @@ if Meteor.isClient
       note
 
   Template.notes.events =
-      'submit #new_note': (event) ->
-        input = $ '#new_note_name'
+      'submit #new-note': (event) ->
+        input = $ '#new-note-name'
         note  = input.val().trim()
 
-        if /([^\s])/.test note
+        if note
           Notes.insert content: note
-          input.val('')
+          input.val ''
 
         input.focus()
         event.preventDefault()
